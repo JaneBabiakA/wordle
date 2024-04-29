@@ -1,3 +1,3 @@
-C:/Users/janef/CLionProjects/wordle/cmake-build-debug/CMakeFiles/wordle.dir
-C:/Users/janef/CLionProjects/wordle/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/janef/CLionProjects/wordle/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/janef/CLionProjects/wordle/cmake-build-debug/CMakeFiles/wordle.dir
+/home/janef/CLionProjects/wordle/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/janef/CLionProjects/wordle/cmake-build-debug/CMakeFiles/rebuild_cache.dir
