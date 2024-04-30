@@ -1,15 +1,32 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 
 int main() {
     //TODO: check that guesses are valid words
-    //TODO: choose random words from a dictionary
     //TODO: figure out command parsing/flow for tool
-    std::string word = "crane";
+    srand(time(0));
+    int line = rand() % 2316;
+    std::ifstream file ("/home/janef/CLionProjects/wordle/words.txt");
+    file.seekg(line * 6);
+    std::string word;
+    std::getline(file, word);
     int attempts = 0;
     while(attempts < 6){
-        std::string guess = "crane";
+        std::string guess;
+        std::cin >> guess;
+        std::cout << "\033[A";
         if(guess.length() != 5){
-            std::cout << "Enter five letters." << std::endl;
+            if(guess == "exit"){
+                return 0;
+            }
+            else if(guess == "help"){
+                std::cout << "Enter your guesses. Type 'exit' to quit.";
+            }
+            else{
+                std::cout << "Enter five letters or a command (exit, help)." << std::endl;
+
+            }
         }
         else{
             for(int letter = 0; letter < guess.length(); letter++){
@@ -25,12 +42,13 @@ int main() {
             }
             std::cout << std::endl;
             if(guess == word){
-                std::cout << "Congrats!";
+                std::cout << "Congrats!" << std::endl;
                 break;
             }
             attempts++;
             if(attempts == 6){
-                std::cout << "Better luck next time.";
+                std::cout  << "\033[1;32m" << word << "\033[0m" << std::endl;
+                std::cout << "Better luck next time!" << std::endl;
             }
         }
     }
